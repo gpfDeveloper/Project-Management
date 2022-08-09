@@ -1,0 +1,551 @@
+{
+    "indexes": {
+        "primary": {
+            "hash": "PK",
+            "sort": "SK"
+        },
+        "GSI1": {
+            "hash": "GSI1PK",
+            "sort": "GSI1SK",
+            "projection": "ALL"
+        }
+    },
+    "models": {
+        "user": {
+            "PK": {
+                "type": "String"
+            },
+            "SK": {
+                "type": "String"
+            },
+            "type": {
+                "type": "String"
+            },
+            "fullName": {
+                "type": "String"
+            },
+            "role": {
+                "type": "String"
+            },
+            "status": {
+                "type": "String"
+            },
+            "GSI1PK": {
+                "type": "String",
+                "value": "${type}"
+            },
+            "GSI1SK": {
+                "type": "String",
+                "value": "${status}"
+            }
+        },
+        "project": {
+            "PK": {
+                "type": "String"
+            },
+            "SK": {
+                "type": "String"
+            },
+            "type": {
+                "type": "String"
+            },
+            "name": {
+                "type": "String"
+            },
+            "projectType": {
+                "type": "String"
+            },
+            "avatar": {
+                "type": "String"
+            },
+            "owner": {
+                "type": "String"
+            },
+            "lead": {
+                "type": "String"
+            },
+            "description": {
+                "type": "String"
+            },
+            "createdAt": {
+                "type": "String"
+            },
+            "updatedAt": {
+                "type": "String"
+            },
+            "GSI1PK": {
+                "type": "String",
+                "value": "${type}"
+            },
+            "GSI1SK": {
+                "type": "String",
+                "value": "${createdAt}"
+            },
+            "leadName": {
+                "type": "String"
+            }
+        },
+        "~new~": {
+            "PK": {
+                "type": "String"
+            },
+            "SK": {
+                "type": "String"
+            },
+            "type": {
+                "type": "String"
+            }
+        },
+        "issue": {
+            "type": {
+                "type": "String"
+            },
+            "PK": {
+                "type": "String"
+            },
+            "SK": {
+                "type": "String"
+            },
+            "issueType": {
+                "type": "String"
+            },
+            "summary": {
+                "type": "String"
+            },
+            "description": {
+                "type": "String"
+            },
+            "assignee": {
+                "type": "String"
+            },
+            "reporter": {
+                "type": "String"
+            },
+            "priority": {
+                "type": "String"
+            },
+            "status": {
+                "type": "String"
+            },
+            "createdAt": {
+                "type": "String"
+            },
+            "updatedAt": {
+                "type": "String"
+            },
+            "dueAt": {
+                "type": "String"
+            },
+            "GSI1PK": {
+                "type": "String",
+                "value": "${assignee}"
+            },
+            "GSI1SK": {
+                "type": "String",
+                "value": "${status}"
+            },
+            "assigneeName": {
+                "type": "String"
+            },
+            "reporterName": {
+                "type": "String"
+            }
+        },
+        "comment": {
+            "type": {
+                "type": "String"
+            },
+            "PK": {
+                "type": "String"
+            },
+            "SK": {
+                "type": "String"
+            },
+            "issueId": {
+                "type": "String"
+            },
+            "createdBy": {
+                "type": "String"
+            },
+            "content": {
+                "type": "String"
+            },
+            "createdAt": {
+                "type": "String"
+            },
+            "updatedAt": {
+                "type": "String"
+            },
+            "createdByName": {
+                "type": "String"
+            }
+        },
+        "history": {
+            "type": {
+                "type": "String"
+            },
+            "PK": {
+                "type": "String"
+            },
+            "SK": {
+                "type": "String"
+            },
+            "issueId": {
+                "type": "String"
+            },
+            "createdAt": {
+                "type": "String"
+            },
+            "field": {
+                "type": "String"
+            },
+            "updatedBy": {
+                "type": "String"
+            },
+            "from": {
+                "type": "String"
+            },
+            "to": {
+                "type": "String"
+            },
+            "updatedByName": {
+                "type": "String"
+            }
+        }
+    },
+    "queries": {},
+    "data": [
+        {
+            "PK": "pengfei@pengfeidevelopment.com",
+            "SK": "A",
+            "type": "user",
+            "fullName": "Pengfei Gao",
+            "role": "Admin",
+            "status": "Active",
+            "GSI1PK": "user",
+            "GSI1SK": "Active"
+        },
+        {
+            "PK": "terry@gmail.com",
+            "SK": "A",
+            "type": "user",
+            "fullName": "Terry Smith",
+            "role": "User",
+            "status": "Active",
+            "GSI1PK": "user",
+            "GSI1SK": "Active"
+        },
+        {
+            "PK": "john@gmail.com",
+            "SK": "A",
+            "type": "user",
+            "fullName": "John Doe",
+            "role": "User",
+            "status": "Active",
+            "GSI1PK": "user",
+            "GSI1SK": "Active"
+        },
+        {
+            "PK": "james@gmail.com",
+            "SK": "A",
+            "type": "user",
+            "fullName": "James Johnson",
+            "role": "User",
+            "status": "Invited",
+            "GSI1PK": "user",
+            "GSI1SK": "Invited"
+        },
+        {
+            "PK": "robert@gmail.com",
+            "SK": "A",
+            "type": "user",
+            "fullName": "Robert Williams",
+            "role": "User",
+            "status": "Suspended",
+            "GSI1PK": "user",
+            "GSI1SK": "Suspended"
+        },
+        {
+            "PK": "8037cd16-0c74-451e-8b2d-67f7e39563f7",
+            "SK": "A",
+            "type": "project",
+            "name": "Project Management Web App",
+            "projectType": "Software",
+            "avatar": "Rocket",
+            "owner": "pengfei@pengfeidevelopment.com",
+            "lead": "pengfei@pengfeidevelopment.com",
+            "description": "Build a project management web app",
+            "createdAt": "2022-08-08T01:15:14",
+            "updatedAt": "2022-08-08T06:16:17",
+            "GSI1PK": "project",
+            "GSI1SK": "2022-08-08T01:15:14",
+            "leadName": "Pengfei Gao"
+        },
+        {
+            "PK": "43527e2e-0665-4adc-96e0-e955d21fa6e6",
+            "SK": "A",
+            "type": "project",
+            "name": "NFT - MVP",
+            "projectType": "Software",
+            "avatar": "Camera",
+            "owner": "pengfei@pengfeidevelopment.com",
+            "lead": "john@gmail.co",
+            "description": "~new~",
+            "createdAt": "2022-08-08T03:23:06",
+            "updatedAt": "2022-08-08T03:23:24",
+            "GSI1PK": "project",
+            "GSI1SK": "2022-08-08T03:23:06",
+            "leadName": "~new~"
+        },
+        {
+            "PK": "4150e18f-b9d5-4021-8e9d-48de6b2012e4",
+            "SK": "A",
+            "type": "project",
+            "name": "Bug tracker app",
+            "projectType": "Software",
+            "avatar": "Bug",
+            "owner": "pengfei@pengfeidevelopment.com",
+            "lead": "john@gmail.com",
+            "description": "~new~",
+            "createdAt": "2022-08-08T03:28:34",
+            "updatedAt": "2022-08-08T03:28:38",
+            "GSI1PK": "project",
+            "GSI1SK": "2022-08-08T03:28:34",
+            "leadName": "~new~"
+        },
+        {
+            "PK": "ad4db95c-268e-4646-b5bb-41e236367da3",
+            "SK": "A",
+            "type": "project",
+            "name": "Real estate web app",
+            "projectType": "Software",
+            "avatar": "Castle",
+            "owner": "pengfei@pengfeidevelopment.com",
+            "lead": "terry@gmail.com",
+            "description": "~new~",
+            "createdAt": "2022-08-08T03:31:07",
+            "updatedAt": "2022-08-08T03:31:10",
+            "GSI1PK": "project",
+            "GSI1SK": "2022-08-08T03:31:07",
+            "leadName": "Terry Smith"
+        },
+        {
+            "PK": "6ac37e8c-f8e0-46f3-abb9-0a5f52f05fde",
+            "SK": "A",
+            "type": "project",
+            "name": "Manage business",
+            "projectType": "Business",
+            "avatar": "Airplane",
+            "owner": "pengfei@pengfeidevelopment.com",
+            "lead": "pengfei@pengfeidevelopment.com",
+            "description": "~new~",
+            "createdAt": "2022-08-08T03:32:40",
+            "updatedAt": "2022-08-08T03:32:43",
+            "GSI1PK": "project",
+            "GSI1SK": "2022-08-08T03:32:40",
+            "leadName": "~new~"
+        },
+        {
+            "PK": "8037cd16-0c74-451e-8b2d-67f7e39563f7",
+            "SK": "ebc304c6-46f7-400e-a9fb-460d8731ff9b",
+            "type": "issue",
+            "issueType": "Story",
+            "summary": "As a user, I can create a project by click Projects > Creact project and specify project name and project type.",
+            "description": "<h1>As a user, I can create a project by click Projects &gt; Creact project and specify project name and project type.</h1>",
+            "assignee": "john@gmail.com",
+            "reporter": "pengfei@pengfeidevelopment.com",
+            "priority": "High",
+            "status": "TO DO",
+            "createdAt": "2022-08-08T03:40:19",
+            "updatedAt": "2022-08-08T03:40:44",
+            "dueAt": "2022-08-18T03:41:10",
+            "GSI1PK": "john@gmail.com",
+            "GSI1SK": "TO DO",
+            "assigneeName": "~new~",
+            "reporterName": "~new~"
+        },
+        {
+            "PK": "8037cd16-0c74-451e-8b2d-67f7e39563f7",
+            "SK": "ed2462a6-1155-4b8c-bb38-96b61486d8bb",
+            "type": "issue",
+            "issueType": "Story",
+            "summary": "As a user, I can update project name, description and avatar in the project setting",
+            "description": "~new~",
+            "assignee": "pengfei@pengfeidevelopment.com",
+            "reporter": "pengfei@pengfeidevelopment.com",
+            "priority": "Lowest",
+            "status": "TO DO",
+            "createdAt": "2022-08-08T03:45:52",
+            "updatedAt": "2022-08-08T03:45:56",
+            "dueAt": "~new~",
+            "GSI1PK": "pengfei@pengfeidevelopment.com",
+            "GSI1SK": "TO DO",
+            "assigneeName": "~new~",
+            "reporterName": "~new~"
+        },
+        {
+            "PK": "8037cd16-0c74-451e-8b2d-67f7e39563f7",
+            "SK": "de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "type": "issue",
+            "issueType": "Story",
+            "summary": "As a user, I can create issues, and specify summary and descriptions, reporter, assignee, priority and due date.",
+            "description": "~new~",
+            "assignee": "terry@gmail.com",
+            "reporter": "pengfei@pengfeidevelopment.com",
+            "priority": "High",
+            "status": "DONE",
+            "createdAt": "2022-08-08T03:49:29",
+            "updatedAt": "2022-08-08T03:49:32",
+            "dueAt": "2022-08-08T03:49:35",
+            "GSI1PK": "terry@gmail.com",
+            "GSI1SK": "DONE",
+            "assigneeName": "~new~",
+            "reporterName": "~new~"
+        },
+        {
+            "PK": "8037cd16-0c74-451e-8b2d-67f7e39563f7",
+            "SK": "e1ea80ac-81c8-48a7-8969-09ecdd007dcd",
+            "type": "issue",
+            "issueType": "Story",
+            "summary": "As a user, I can view and update issue details by clicking the card of the issue on the Kanban board.",
+            "description": "~new~",
+            "assignee": "terry@gmail.com",
+            "reporter": "pengfei@pengfeidevelopment.com",
+            "priority": "Medium",
+            "status": "TO DO",
+            "createdAt": "2022-08-08T05:11:58",
+            "updatedAt": "2022-08-08T05:12:02",
+            "dueAt": "~new~",
+            "GSI1PK": "terry@gmail.com",
+            "GSI1SK": "TO DO",
+            "assigneeName": "~new~",
+            "reporterName": "~new~"
+        },
+        {
+            "PK": "8037cd16-0c74-451e-8b2d-67f7e39563f7",
+            "SK": "e9c26ccb-672b-4490-bd99-3554c975ae54",
+            "type": "issue",
+            "issueType": "Story",
+            "summary": "As a user, I can add a comment to a issue, and I can also edit and delete a comment. I can also know if the comment is been edited.",
+            "description": "~new~",
+            "assignee": "pengfei@pengfeidevelopment.com",
+            "reporter": "pengfei@pengfeidevelopment.com",
+            "priority": "High",
+            "status": "IN PROGRESS",
+            "createdAt": "2022-08-08T05:25:56",
+            "updatedAt": "2022-08-08T05:25:59",
+            "dueAt": "2022-08-18T05:26:06",
+            "GSI1PK": "pengfei@pengfeidevelopment.com",
+            "GSI1SK": "IN PROGRESS",
+            "assigneeName": "~new~",
+            "reporterName": "~new~"
+        },
+        {
+            "PK": "8037cd16-0c74-451e-8b2d-67f7e39563f7",
+            "SK": "be62de5c-efdf-42bb-9877-8d1026c49308",
+            "type": "issue",
+            "issueType": "Bug",
+            "summary": "Project is not update properly after user click the save button on project setting page.",
+            "description": "~new~",
+            "assignee": "pengfei@pengfeidevelopment.com",
+            "reporter": "pengfei@pengfeidevelopment.com",
+            "priority": "High",
+            "status": "IN PROGRESS",
+            "createdAt": "2022-08-08T05:28:46",
+            "updatedAt": "2022-08-08T05:28:49",
+            "dueAt": "2022-08-08T05:28:59",
+            "GSI1PK": "pengfei@pengfeidevelopment.com",
+            "GSI1SK": "IN PROGRESS",
+            "assigneeName": "Pengfei Gao",
+            "reporterName": "Pengfei Gao"
+        },
+        {
+            "PK": "6ac37e8c-f8e0-46f3-abb9-0a5f52f05fde",
+            "SK": "b4f8dcf1-391e-4e41-8eaf-288ecf9d5ed7",
+            "type": "issue",
+            "issueType": "Task",
+            "summary": "Analysis stock profit and loss last month",
+            "description": "~new~",
+            "assignee": "pengfei@pengfeidevelopment.com",
+            "reporter": "pengfei@pengfeidevelopment.com",
+            "priority": "Low",
+            "status": "TO DO",
+            "createdAt": "2022-08-08T05:31:27",
+            "updatedAt": "2022-08-08T05:31:30",
+            "dueAt": "2022-08-08T05:31:33",
+            "GSI1PK": "pengfei@pengfeidevelopment.com",
+            "GSI1SK": "TO DO",
+            "assigneeName": "~new~",
+            "reporterName": "~new~"
+        },
+        {
+            "PK": "COMMENT#de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "SK": "834c0931-1a94-4caa-9487-2b041f2d29c1",
+            "type": "comment",
+            "issueId": "de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "createdBy": "pengfei@pengfeidevelopment.com",
+            "content": "It should be done today.",
+            "createdAt": "2022-08-08T07:37:29",
+            "updatedAt": "2022-08-08T07:37:34",
+            "createdByName": "Pengfei Gao"
+        },
+        {
+            "PK": "COMMENT#de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "SK": "f2b84b75-591b-478c-b95d-3ff156832625",
+            "type": "comment",
+            "issueId": "de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "createdBy": "pengfei@pengfeidevelopment.com",
+            "content": "Working on it",
+            "createdAt": "2022-08-08T07:39:49",
+            "updatedAt": "2022-08-08T07:39:53",
+            "createdByName": "Pengfei Gao"
+        },
+        {
+            "PK": "COMMENT#e1ea80ac-81c8-48a7-8969-09ecdd007dcd",
+            "SK": "c9ade085-cb22-41da-827f-a576f0fc9129",
+            "type": "comment",
+            "issueId": "e1ea80ac-81c8-48a7-8969-09ecdd007dcd",
+            "createdBy": "pengfei@pengfeidevelopment.com",
+            "content": "Update assignee and set priority to high.",
+            "createdAt": "2022-08-08T07:42:09",
+            "updatedAt": "2022-08-08T07:42:12",
+            "createdByName": "Pengfei Gao"
+        },
+        {
+            "PK": "HISTORY#de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "SK": "01807302-3993-4c2e-93d3-3845d3ce4308",
+            "type": "history",
+            "issueId": "de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "createdAt": "2022-08-08T07:43:33",
+            "field": "Issue",
+            "updatedBy": "pengfei@pengfeidevelopment.com",
+            "from": "~new~",
+            "to": "~new~",
+            "updatedByName": "Pengfei Gao"
+        },
+        {
+            "PK": "HISTORY#de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "SK": "f423ab71-7ffb-413c-a13e-75a6ad44d5b3",
+            "type": "history",
+            "issueId": "de6014bc-21e9-4e5f-b9b4-ab54dd5fb44e",
+            "createdAt": "2022-08-08T07:45:47",
+            "field": "Priority",
+            "updatedBy": "pengfei@pengfeidevelopment.com",
+            "from": "Medium",
+            "to": "High",
+            "updatedByName": "Pengfei Gao"
+        },
+        {
+            "PK": "HISTORY#ebc304c6-46f7-400e-a9fb-460d8731ff9b",
+            "SK": "caaddf4b-dc8a-47ee-8be9-a02afe18448e",
+            "type": "history",
+            "issueId": "ebc304c6-46f7-400e-a9fb-460d8731ff9b",
+            "createdAt": "2022-08-08T07:48:32",
+            "field": "Issue",
+            "updatedBy": "pengfei@pengfeidevelopment.com",
+            "from": "~new~",
+            "to": "~new~",
+            "updatedByName": "Pengfei Gao"
+        }
+    ]
+}
