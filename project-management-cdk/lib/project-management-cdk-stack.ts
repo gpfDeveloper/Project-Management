@@ -1,6 +1,6 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import ProjectManagementDB from './db';
+import ProjectManagementDB from './dynamoDB';
 import ProjectManagementLambda from './lambda';
 
 export class ProjectManagementCdkStack extends Stack {

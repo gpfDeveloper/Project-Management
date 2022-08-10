@@ -19,7 +19,7 @@ export const handler: APIGatewayProxyHandler = async (
   return response;
 };
 
-const getUsers = async () => {
+const getMembers = async () => {
   try {
   } catch (err) {
     console.error(err);
@@ -27,7 +27,7 @@ const getUsers = async () => {
   }
 };
 
-const getActiveUsers = async () => {
+const getActiveMembers = async () => {
   try {
   } catch (err) {
     console.error(err);
@@ -67,7 +67,7 @@ const getHistories = async (issueId: string) => {
   }
 };
 
-const getUserIssues = async (email: string) => {
+const getMemberIssues = async (email: string) => {
   try {
   } catch (err) {
     console.error(err);
@@ -75,7 +75,7 @@ const getUserIssues = async (email: string) => {
   }
 };
 
-const addUser = async (email: string, name: string) => {
+const addMember = async (email: string, name: string) => {
   try {
   } catch (err) {
     console.error(err);
@@ -83,7 +83,7 @@ const addUser = async (email: string, name: string) => {
   }
 };
 
-const updateUser = async (user: TeamMember) => {
+const updateMember = async (user: TeamMember) => {
   try {
   } catch (err) {
     console.error(err);
