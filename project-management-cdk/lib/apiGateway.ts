@@ -3,14 +3,14 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 
 type Props = {
-  projectManagmentLambda: lambda.IFunction;
+  projectManagementLambda: lambda.IFunction;
 };
 
 export default class ProjectManagementApiGateway extends Construct {
   constructor(scope: Construct, id: string, props: Props) {
     super(scope, id);
     const api = new apiGateway.LambdaRestApi(this, 'projectManagementApi', {
-      handler: props.projectManagmentLambda,
+      handler: props.projectManagementLambda,
       proxy: false,
     });
 
@@ -19,6 +19,7 @@ export default class ProjectManagementApiGateway extends Construct {
      * Get:
      * /people - get all members
      * /people?status=active - get active members
+     * /people/{email}/issues - active issues (todo and inProgress) assigned to user
      * Post:
      * /people - add member
      * Put:
@@ -30,6 +31,8 @@ export default class ProjectManagementApiGateway extends Construct {
     peopleApi.addMethod('POST');
     const singlePeopleApi = peopleApi.addResource('{email}');
     singlePeopleApi.addMethod('PUT');
+    const issuesPeopleApi = singlePeopleApi.addResource('issues');
+    issuesPeopleApi.addMethod('GET');
 
     /**
      * Project
@@ -57,7 +60,6 @@ export default class ProjectManagementApiGateway extends Construct {
      * Get:
      * /projects/{projectId}/issues - project with issues
      * /projects/{projectId}/issues/{issueId} - single issue
-     * /people/{email}/issues - active issues (todo and inProgress) assigned to user
      * Post:
      * /projects/{projectId}/issues - add an issue
      * Put:
@@ -73,8 +75,6 @@ export default class ProjectManagementApiGateway extends Construct {
     singleIssueApi.addMethod('GET');
     singleIssueApi.addMethod('PUT');
     singleIssueApi.addMethod('DELETE');
-    const issuesPeopleApi = singlePeopleApi.addResource('issues');
-    issuesPeopleApi.addMethod('GET');
 
     /**
      * Comment

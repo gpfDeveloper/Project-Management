@@ -14,6 +14,7 @@ const TABLE_NAME = process.env.TABLE_NAME;
 export const handler: APIGatewayProxyHandler = async (
   event: APIGatewayProxyEvent
 ) => {
+  console.log('event: ', event);
   const pathParameters = event.pathParameters;
   const response: APIGatewayProxyResult = { statusCode: 200, body: 'test123' };
   return response;

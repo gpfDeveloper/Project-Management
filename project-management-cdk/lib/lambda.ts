@@ -4,18 +4,14 @@ import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import { Construct } from 'constructs';
 import { join } from 'path';
 
-type ProjectManagementLambdaProps = {
+type Props = {
   projectManagementTable: dynamodb.ITable;
 };
 
 export default class ProjectManagementLambda extends Construct {
   public readonly projectManagementLambda: lambdaNode.NodejsFunction;
 
-  constructor(
-    scope: Construct,
-    id: string,
-    props: ProjectManagementLambdaProps
-  ) {
+  constructor(scope: Construct, id: string, props: Props) {
     super(scope, id);
 
     const lambdaFn = new lambdaNode.NodejsFunction(
